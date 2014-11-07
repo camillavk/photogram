@@ -7,6 +7,8 @@ Comments:
     <% @post.comments.each do |comment| %>
       <li>
         <%= comment.comment %>
+        <span class='likes_count'><%= comment.likes.count %></span> likes
+        <%= link_to "Like", comment_likes_path(comment), class: 'likes_link' %>
       </li>
     <% end %>
   </ul>
