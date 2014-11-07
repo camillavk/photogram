@@ -28,7 +28,16 @@ describe 'posts' do
       expect(page).to have_content 'Post successfully saved'
     end
   end
+
+  context 'viewing posts' do
+    before do
+      @sunrise = Post.create(caption: 'Sunrise')
+    end
+
+    it 'lets a user view a post' do
+      visit '/'
+      click_link 'Sunrise'
+      expect(current_path).to eq "/posts/#{@sunrise.id}"
+    end
+  end
 end
-
-
-# attach_file 'Photo', File.join(Rails.root, 'public', 'images', 'default.png')

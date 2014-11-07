@@ -1,7 +1,7 @@
 <% if @posts.any? %>
   <% @posts.each do |post| %>
     <%= image_tag post.image.url(:thumb) %>
-    <%= post.caption %>
+    <%= link_to "#{post.caption}", post_path(post) %>
   <% end %>
 <% else %>
   No posts yet!
