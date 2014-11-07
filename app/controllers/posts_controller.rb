@@ -10,9 +10,10 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.new(params.require(:post).permit(:caption, :image))
-    # @post.user_id = current_user.id
+    @post.user_id = current_user.id
     if @post.save
       flash[:notice] = 'Post successfully saved'
+    else @post.delete
     end
     redirect_to '/'
   end
@@ -22,7 +23,10 @@ class PostsController < ApplicationController
   end
 
   def edit
-    @post = Post.find(params[:id])
+    @post = current_user.posts.find(params[:id])
+    rescue ActiveRecord::RecordNotFound
+      flash[:notice] = 'Not your post'
+    redirect_to '/'
   end
 
   def update
@@ -32,9 +36,9 @@ class PostsController < ApplicationController
   end
 
   def destroy
-    @post = Post.find(params[:id])
-    @post.destroy
-    flash[:notice] = 'Post deleted successfully'
+    @post = current_user.posts.find(params[:id])
+      @post.destroy
+      flash[:notice] = 'Post deleted successfully'
     redirect_to '/'
   end
 

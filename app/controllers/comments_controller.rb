@@ -7,7 +7,13 @@ class CommentsController < ApplicationController
 
   def create
     @post = Post.find(params[:post_id])
-    @comment = @post.comments.create(params.require(:comment).permit(:comment))
+    @comment = @post.comments.new(params.require(:comment).permit(:comment))
+      @comment.user = current_user
+      if @comment.save
+        flash[:notice] = 'Comment successfully posted'
+      else @comment.delete
+        flash[:notice] = 'You have already commented on this post'
+      end
     redirect_to '/'
   end
 
