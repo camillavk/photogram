@@ -1,3 +1,15 @@
 <%= @post.caption %>
-
 <%= image_tag @post.image.url(:medium) %>
+
+Comments:
+<% if @post.comments.any? %>
+  <ul>
+    <% @post.comments.each do |comment| %>
+      <li>
+        <%= comment.comment %>
+      </li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>No comments yet</p>
+<% end %>

@@ -4,6 +4,7 @@
     <%= link_to "#{post.caption}", post_path(post) %>
     <%= link_to "Edit #{post.caption}", edit_post_path(post) %>
     <%= link_to "Delete #{post.caption}", post_path(post), method: :delete %>
+    <%= link_to "Comment on #{post.caption}", new_post_comment_path(post) %>
   <% end %>
 <% else %>
   No posts yet!
