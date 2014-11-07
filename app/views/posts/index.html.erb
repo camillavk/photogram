@@ -1,0 +1,9 @@
+<% if @posts.any? %>
+  <% @posts.each do |post| %>
+    <%= post.caption %>
+  <% end %>
+<% else %>
+  No posts yet!
+<% end %>
+
+<a href='/posts/new'>New Post</a>
