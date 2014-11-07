@@ -9,7 +9,7 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.new(params.require(:post).permit(:caption))
+    @post = Post.new(params.require(:post).permit(:caption, :image))
     # @post.user_id = current_user.id
     if @post.save
       flash[:notice] = 'Post successfully saved'

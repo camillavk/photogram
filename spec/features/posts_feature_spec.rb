@@ -18,5 +18,17 @@ describe 'posts' do
       click_button 'Create Post'
       expect(page).to have_content 'Sunrise'
     end
+
+    it 'can upload a picture' do
+      visit '/'
+      click_link 'New Post'
+      attach_file 'Image', File.join(Rails.root, 'spec', 'fixtures', 'Eeyore.jpg')
+      fill_in 'Caption', with: 'Sunrise'
+      click_button 'Create Post'
+      expect(page).to have_content 'Post successfully saved'
+    end
   end
 end
+
+
+# attach_file 'Photo', File.join(Rails.root, 'public', 'images', 'default.png')
