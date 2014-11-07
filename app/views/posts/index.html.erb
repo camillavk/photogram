@@ -2,6 +2,8 @@
   <% @posts.each do |post| %>
     <%= image_tag post.image.url(:thumb) %>
     <%= link_to "#{post.caption}", post_path(post) %>
+    <%= link_to "Edit #{post.caption}", edit_post_path(post) %>
+    <%= link_to "Delete #{post.caption}", post_path(post), method: :delete %>
   <% end %>
 <% else %>
   No posts yet!

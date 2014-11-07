@@ -39,5 +39,25 @@ describe 'posts' do
       click_link 'Sunrise'
       expect(current_path).to eq "/posts/#{@sunrise.id}"
     end
+
+    it 'lets a user edit a post' do
+      visit '/'
+      click_link 'Edit Sunrise'
+      fill_in 'Caption', with: 'Sunset'
+      click_button 'Update Post'
+      expect(page).to have_content 'Sunset'
+    end
+  end
+
+  context 'deleting posts' do
+    before do
+      @sunrise = Post.create(caption: 'Sunrise')
+    end
+    
+    it 'removes a post when user deletes it' do
+      visit '/'
+      click_link 'Delete Sunrise'
+      expect(page).not_to have_content 'Sunrise'
+    end
   end
 end
