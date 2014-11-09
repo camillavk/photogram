@@ -33,6 +33,7 @@ gem 'devise'
 gem 'paperclip'
 gem 'twitter-bootstrap-rails'
 gem 'cancan'
+gem 'aws-sdk'
 
 # Use unicorn as the app server
 # gem 'unicorn'
