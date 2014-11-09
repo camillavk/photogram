@@ -14,7 +14,7 @@ class CommentsController < ApplicationController
       if @comment.save
         flash[:notice] = 'Comment successfully posted'
       else @comment.delete
-        flash[:notice] = 'You have already commented on this post'
+        flash[:alert] = 'You have already commented on this post'
       end
     redirect_to post_path(@post)
   end
@@ -25,7 +25,7 @@ class CommentsController < ApplicationController
       @comment.destroy
       flash[:notice] = 'Comment deleted successfully'
     else
-      flash[:notice] = 'Not your comment'
+      flash[:alert] = 'Not your comment'
     end
     redirect_to '/'
   end

@@ -25,7 +25,7 @@ class PostsController < ApplicationController
   def edit
     @post = current_user.posts.find(params[:id])
     rescue ActiveRecord::RecordNotFound
-      flash[:notice] = 'Not your post'
+      flash[:alert] = 'Not your post'
     redirect_to '/'
   end
 
