@@ -38,8 +38,6 @@
           <% @post.comments.each do |comment| %>
             <li class='comment'>
               <%= comment.comment %>
-              <span class='likes_count'><%= comment.likes.count %></span> likes
-              <%= link_to "Like", comment_likes_path(comment), class: 'likes_link' %>
               <%= delete_comment(comment) %>
             </li>
           <% end %>

@@ -7,7 +7,9 @@
             <%= image_tag post.image.url(:thumb) %>
             <%= show_post(post) %>
       </div>
-      
+
+      <span class='likes_count'><%= post.likes.count %></span> likes
+      <%= link_to "Like", post_likes_path(post), class: 'likes_link' %>
     <% end %>
     <% else %>
       No posts yet!
