@@ -56,6 +56,7 @@ describe 'posts' do
 
     it 'lets a user edit their own post' do
       visit '/'
+      click_link 'Sunrise'
       click_link 'Edit Sunrise'
       fill_in 'Caption', with: 'Sunset'
       click_button 'Update Post'
@@ -64,6 +65,7 @@ describe 'posts' do
 
     it 'removes a post when user deletes it' do
       visit '/'
+      click_link 'Sunrise'
       click_link 'Delete Sunrise'
       expect(page).not_to have_content 'Sunrise'
     end

@@ -5,30 +5,12 @@
       <% @posts.each do |post| %>
       <div class='thumb_image'>
             <%= image_tag post.image.url(:thumb) %>
-            <%= link_to "#{post.caption}", post_path(post), 'data-no-turbolink' => true %>
+            <%= show_post(post) %>
       </div>
-      <div class='links'>
-        <ul class="list-group">
-          <li class="list-group-item">
-            <%= link_to "Edit #{post.caption}", edit_post_path(post) %>
-          </li>
-          <li class="list-group-item">
-            <%= link_to "Delete #{post.caption}", post_path(post), method: :delete %>
-          </li>
-          <li class="list-group-item">
-            <%= link_to "Comment on #{post.caption}", new_post_comment_path(post) %>
-          </li>
-        </ul>
-      </div>
+      
     <% end %>
     <% else %>
       No posts yet!
     <% end %>
   </div>
-</section>
-
-<section id='new_post'>
-  <% if user_signed_in? %>
-    <a href='/posts/new'>New Post</a>
-  <% end %>
 </section>
