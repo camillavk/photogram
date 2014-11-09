@@ -31,6 +31,7 @@ gem 'spring',        group: :development
 
 gem 'devise'
 gem 'paperclip'
+gem 'twitter-bootstrap-rails'
 
 # Use unicorn as the app server
 # gem 'unicorn'

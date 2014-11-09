@@ -18,8 +18,7 @@ describe 'posts' do
     end
 
     it 'prompts users to fill in a form then displays the new post' do
-      visit '/'
-      click_link 'New Post'
+      visit '/posts/new'
       fill_in 'Caption', with: 'Sunrise'
       click_button 'Create Post'
       expect(page).to have_content 'Sunrise'

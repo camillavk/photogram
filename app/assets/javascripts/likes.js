@@ -8,6 +8,6 @@ $(document).ready(function () {
       // debugger
       likeCount.text(response.new_likes_count);
     });
-  });
       $(this).hide();
+  });
 });

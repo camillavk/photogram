@@ -1,0 +1,89 @@
+/*
+  =require twitter-bootstrap-static/bootstrap
+
+  Use Font Awesome icons (default)
+  To use Glyphicons sprites instead of Font Awesome, replace with "require twitter-bootstrap-static/sprites"
+  =require twitter-bootstrap-static/fontawesome
+  */
+
+  /*SHOW POST*/
+
+  /*GLOBAL FONT STYLES*/
+
+* {
+  box-sizing: border-box;
+}
+
+/*DETAILS*/
+
+#image {
+  width:60%;
+  height:500px;
+  margin-left: auto;
+  margin-right: auto;
+  /*float:left;*/
+  font-family: 'Lato';
+  /*background-color: red;*/
+  }
+
+  #caption {
+    /*margin-top: 10px;*/
+    font-size: 2em;
+    text-align: center;
+  }
+
+  .image {
+    margin-left: auto;
+    margin-right: auto;
+    width: 600px;
+    /*background-color: orange;*/
+    /*float: center;*/
+  }
+
+    a {
+      color: #447799;
+    }
+
+/*COMMENTS*/
+
+#comments {
+  width:70%;
+  font-family: 'Lato';
+  margin-left: auto;
+  margin-right: auto;
+  height:400px;
+  /*background-color: blue;*/
+  }
+
+  /*.comment {
+    padding: 10px;
+    margin-top: 5px;
+  }*/
+
+  h3 {
+    font-size: 1em;
+    font-weight: 400;
+    /*text-align: center;*/
+    margin-top: 10px;
+  }
+
+  /*LINKS*/
+#posts {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#thumb_image {
+  width: 400px;
+  /*border: none;*/
+  /*border-width: 0;*/
+}
+
+#links {
+  float: right;
+  background-color: orange;
+  width: 40%;
+  padding: 20px;
+  /*display: inline;*/
+}
