@@ -34,6 +34,7 @@ gem 'paperclip'
 gem 'twitter-bootstrap-rails'
 gem 'cancan'
 gem 'aws-sdk'
+gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
 
 # Use unicorn as the app server
 # gem 'unicorn'

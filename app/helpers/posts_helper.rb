@@ -16,4 +16,8 @@ module PostsHelper
     "£#{'%.2f' % post.price}"
   end
 
+  def buy_now(post)
+    link_to "Buy Now", new_post_charge_path(post)
+  end
+
 end

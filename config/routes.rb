@@ -17,7 +17,8 @@ Rails.application.routes.draw do
   #   resources :products
   resources :posts, shallow: true do
     resources :comments
-      resources :likes
+    resources :likes
+    resources :charges
     # end
   end
 
