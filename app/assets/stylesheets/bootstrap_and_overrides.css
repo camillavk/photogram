@@ -67,6 +67,14 @@
     margin-top: 10px;
   }
 
+#update {
+  width:70%;
+  font-family: 'Lato';
+  margin-left: auto;
+  margin-right: auto;
+  height:180px;
+}
+
   /*LINKS*/
 #posts {
   width: 70%;

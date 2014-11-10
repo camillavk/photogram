@@ -6,12 +6,18 @@
       <div class='banel-body'>
         <section id='caption'>
           <%= @post.caption %>
+          <%= post_price(@post) %>
         </section>
       </div>
     </div>
 </section>
 
 <section id='update'>
+  <div class="panel panel-danger">
+    <div class="panel-heading">
+      <h3 class="panel-title">Update:</h3>
+    </div>
+    <div class="panel-body">
   <div class='links'>
     <ul class="list-group">
       <li class="list-group-item">
@@ -22,6 +28,8 @@
       </li>
     </ul>
   </div>
+  </div>
+</div>
 </section>
 
 <section id='comments'>

@@ -10,7 +10,11 @@
             <%= image_tag post.image.url(:thumb) %>
           </a>
           <div class="media-body">
-            <h4><%= show_post(post) %></h4>
+            <h4>
+              <%= show_post(post) %>
+              -
+              <%= post_price(post) %>
+            </h4>
 
             <% if post.comments.any? %>
               <ul>

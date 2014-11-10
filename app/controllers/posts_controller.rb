@@ -9,7 +9,7 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.new(params.require(:post).permit(:caption, :image))
+    @post = Post.new(params.require(:post).permit(:caption, :image, :price))
     @post.user_id = current_user.id
     if @post.save
       flash[:notice] = 'Post successfully saved'
@@ -31,7 +31,7 @@ class PostsController < ApplicationController
 
   def update
     @post = Post.find(params[:id])
-    @post.update(params.require(:post).permit(:caption, :image))
+    @post.update(params.require(:post).permit(:caption, :image, :price))
     redirect_to '/'
   end
 

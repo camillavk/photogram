@@ -12,4 +12,8 @@ module PostsHelper
     link_to "Delete #{post.caption}", post_path(post), method: :delete if can?(:destroy, post)
   end
 
+  def post_price(post)
+    "£#{'%.2f' % post.price}"
+  end
+
 end
