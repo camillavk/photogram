@@ -82,14 +82,14 @@
 
 #links {
   float: right;
-  background-color: orange;
+  /*background-color: orange;*/
   width: 40%;
   padding: 20px;
   /*display: inline;*/
 }
 
 .media-body {
-  background-color: red;
+  /*background-color: red;*/
   float: right;
   /*text-align: center;*/
   margin-right: 300px;
