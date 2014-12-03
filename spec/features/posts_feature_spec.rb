@@ -20,6 +20,7 @@ describe 'posts' do
     it 'prompts users to fill in a form then displays the new post' do
       visit '/posts/new'
       fill_in 'Caption', with: 'Sunrise'
+      fill_in 'Price', with: '2.00'
       click_button 'Create Post'
       expect(page).to have_content 'Sunrise'
     end
@@ -36,7 +37,7 @@ describe 'posts' do
 
   context 'viewing posts' do
     before do
-      @sunrise = Post.create(caption: 'Sunrise')
+      @sunrise = Post.create(caption: 'Sunrise', price: '2.00')
     end
 
     it 'lets a user view a post' do
@@ -50,7 +51,7 @@ describe 'posts' do
     before do
       visit '/'
       sign_up
-      User.first().posts.create(caption: 'Sunrise')
+      User.first().posts.create(caption: 'Sunrise', price: '2.00')
     end
 
 
