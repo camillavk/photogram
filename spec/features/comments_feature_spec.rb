@@ -8,7 +8,7 @@ describe 'comments' do
     fill_in 'Password', with: 'testtest'
     fill_in 'Password confirmation', with: 'testtest'
     click_button 'Sign up'
-    User.first().posts.create(caption: 'Sunrise')
+    User.first().posts.create(caption: 'Sunrise', price: '2.00')
   end
 
   it 'allows users to leave a comment using a form' do

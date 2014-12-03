@@ -8,7 +8,7 @@ class Post < ActiveRecord::Base
     :thumb => '300x300>'},
     :default_url => '/images/:style/missing.png', :s3_protocol => :https
   validates_attachment_content_type :image, :content_type => /\Aimage\/.*\Z/
-  # validates :image, presence: true
+  validates :price, presence: true
 
   def newest_comments
     self.comments.order('created_at DESC').per_page(3)
